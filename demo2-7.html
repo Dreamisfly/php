@@ -1,0 +1,31 @@
+<html>
+	<head>
+	</head>
+
+	<body>
+{if $islogin eq false}
+请登录
+{/if}
+{if $number is even}
+<p>{$number}是偶数</p>
+{else if $number is odd}
+<p>{$number}是奇数</p>
+	
+{/if}
+
+{for $tmp=$start to $end step 3 max=$max}
+<p>{$tmp}</p>
+{/for}
+
+{foreach $users as $key=>$value}
+<li>{$key}</li>
+<li>{$value.username}</li>
+<li>{$value.email}</li>
+{/foreach}
+
+{section loop=$admin name="item"}
+{$admin[item]}
+{/section}
+</body>
+
+</html>
